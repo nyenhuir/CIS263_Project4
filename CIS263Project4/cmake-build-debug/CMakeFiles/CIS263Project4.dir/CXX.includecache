@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/nyenh/Documents/GVSU/SUMMER 2019/CIS263/PROJECTS/CIS263Project4/main.cpp
+iostream
+-
+fstream
+-
+
