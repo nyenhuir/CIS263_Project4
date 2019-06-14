@@ -61,25 +61,40 @@ else{
 }
 
 double maxval=0;
-double *test;
-int remaining=0,j=0;
+double *maxarr;
+string *maxNums;
+maxarr = new double[numslots];
+maxNums = new string[numslots];
+//Vector <string> color;
+int j=0;
 
-    test = new double[numslots];
-    for(i=0;i<numslots;i++) test[i]=0;
 
-    maxval = slotvals[numslots];
-    cout<<"slotvals: " <<slotvals[0]<<","<<slotvals[1]<<","<<slotvals[2]<<","<<slotvals[3];
+    for(i=0;i<=numslots;i++) {
+        maxarr[i]=slotvals[i];
+//        maxNums[i]="fish";
+//        cout<<"running\n";
+    }
+
+
+//    for(i=0;i<numslots+1;i++)
+//    cout<<"slotvals: " <<i<<"= "<<slotvals[i]<<"\n";
+
     for(i=1;i<=numslots;i++){
-        for(j=1;j<=i;j++){
+        for(j=1;j<i;j++){
+
             cout<<"\ni: "<<i<<" j: "<<j<< " =";
-            cout<<"Maxval: "<<maxval<<" slotval[i]: "<<slotvals[i]<<" slotval[j]: "<<slotvals[j];
-            if((slotvals[i]+slotvals[j])>maxval&&((i+j)<=numslots)){
-                maxval = slotvals[i]+slotvals[j];
-                cout<<"maxvelafter: "<<maxval;
+            cout<<i<<"<"<<i-j<<"+"<<i-(i-j);
+            if(maxarr[i]<maxarr[i-j]+maxarr[i-(i-j)]){
+                maxarr[i]=maxarr[i-j]+maxarr[i-(i-j)];
+//                maxNums[i]=maxNums[i-j].append(",").append(maxNums[i-(i-j)]);
             }
+//            if(maxarr[i]<maxarr[i-(i-j)]) maxarr[i]=maxarr[i-(i-j)];
+//            cout<<slotvals[i]<<"<"<<slotvals[i-j]<<"+"<<slotvals[i-(i-j)];
+//            cout<<"Maxval: "<<maxval<<" slotval[i]: "<<slotvals[i]<<" slotval[j]: "<<slotvals[j];
 
         }
     }
-    cout<<"Maxval: "<<maxval;
+    for(i=0;i<=numslots;i++) cout<<"Maxarray["<<i<<"]="<<maxarr[i]<<"\n";
+    cout<<"Maxval: "<<maxarr[numslots]<<", "+maxNums[numslots];
     return 0;
 }
