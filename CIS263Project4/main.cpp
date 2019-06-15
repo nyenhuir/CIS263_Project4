@@ -18,6 +18,8 @@
  ******************************************************************/
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <map>
 using namespace std;
 
 int main() {
@@ -64,15 +66,17 @@ double maxval=0;
 double *maxarr;
 string *maxNums;
 maxarr = new double[numslots];
-maxNums = new string[numslots];
 //Vector <string> color;
-int j=0;
+//string *nums= new string[numslots];
+map <int,string> usedNum;
 
+int j=0;
 
     for(i=0;i<=numslots;i++) {
         maxarr[i]=slotvals[i];
-//        maxNums[i]="fish";
-//        cout<<"running\n";
+//        nums[i]+=""+to_string(i);
+//        cout<<"nums["<<i<<"]="+nums[i]+"\n";
+        usedNum[i]=to_string(i);
     }
 
 
@@ -82,11 +86,16 @@ int j=0;
     for(i=1;i<=numslots;i++){
         for(j=1;j<i;j++){
 
-            cout<<"\ni: "<<i<<" j: "<<j<< " =";
-            cout<<i<<"<"<<i-j<<"+"<<i-(i-j);
+//            cout<<"\ni: "<<i<<" j: "<<j<< " =";
+//            cout<<i<<"<"<<i-j<<"+"<<i-(i-j);
             if(maxarr[i]<maxarr[i-j]+maxarr[i-(i-j)]){
+//                cout<<"CHANGED";
                 maxarr[i]=maxarr[i-j]+maxarr[i-(i-j)];
-//                maxNums[i]=maxNums[i-j].append(",").append(maxNums[i-(i-j)]);
+
+                    usedNum[i] = usedNum[i - j]+",";
+                     usedNum[i] += usedNum[i - (i - j)];
+//                    cout << " " + usedNum[i];
+
             }
 //            if(maxarr[i]<maxarr[i-(i-j)]) maxarr[i]=maxarr[i-(i-j)];
 //            cout<<slotvals[i]<<"<"<<slotvals[i-j]<<"+"<<slotvals[i-(i-j)];
@@ -94,7 +103,12 @@ int j=0;
 
         }
     }
-    for(i=0;i<=numslots;i++) cout<<"Maxarray["<<i<<"]="<<maxarr[i]<<"\n";
-    cout<<"Maxval: "<<maxarr[numslots]<<", "+maxNums[numslots];
+//    for(i=0;i<=numslots;i++) cout<<"Maxarray["<<i<<"]="<<maxarr[i]<<"\n";
+//    cout<<"Maxval: "<<maxarr[numslots]<<", "+usedNum[numslots];
+
+    cout<<"From input file: "<<numslots<<" slots: ";
+    for(i=1;i<numslots;i++) cout<<slotvals[i]<<", ";
+    cout<<slotvals[numslots]<<"\nThe optimal set of bids is worth $"<<maxarr[numslots]<<".\n";
+    cout<<"Lengths: "<<usedNum[numslots];
     return 0;
 }
