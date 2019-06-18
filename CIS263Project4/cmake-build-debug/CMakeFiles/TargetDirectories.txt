@@ -1,3 +1,3 @@
-C:/Users/nyenh/Documents/GVSU/SUMMER 2019/CIS263/Github/CIS263_Project4/CIS263Project4/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/nyenh/Documents/GVSU/SUMMER 2019/CIS263/Github/CIS263_Project4/CIS263Project4/cmake-build-debug/CMakeFiles/CIS263Project4.dir
-C:/Users/nyenh/Documents/GVSU/SUMMER 2019/CIS263/Github/CIS263_Project4/CIS263Project4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Ben/CLionProjects/CIS263_Project4/CIS263Project4/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ben/CLionProjects/CIS263_Project4/CIS263Project4/cmake-build-debug/CMakeFiles/CIS263Project4.dir
+C:/Users/Ben/CLionProjects/CIS263_Project4/CIS263Project4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
